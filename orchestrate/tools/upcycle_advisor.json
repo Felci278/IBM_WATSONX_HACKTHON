@@ -1,0 +1,29 @@
+{
+  "name": "upcycle_advisor",
+  "description": "Provide upcycling suggestions for clothing items.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "item_type": {
+        "type": "string",
+        "description": "Type of clothing item (e.g., shirt, jeans)"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string"},
+      "count": {"type": "integer"},
+      "suggestions": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  },
+  "endpoint": {
+    "url": "http://localhost:8000/api/routes_actions/upcycle",
+    "method": "GET",
+    "params": ["item_type"]
+  }
+}

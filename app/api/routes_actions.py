@@ -9,7 +9,7 @@ router = APIRouter()
 @router.get("/donate")
 async def donate_items(
     location: str = Query(..., description="User's location (city or address)"),
-    radius_km: int = Query(5, description="Search radius in kilometers")
+    radius_km: int = Query(10, description="Search radius in kilometers")
 ):
     """
     Find donation centers near the user.

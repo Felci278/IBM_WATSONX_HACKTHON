@@ -1,0 +1,35 @@
+{
+  "name": "donation_locator",
+  "description": "Find donation centers near a user’s location.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "User's location (address or city)"
+      },
+      "radius_km": {
+        "type": "integer",
+        "default": 5,
+        "description": "Search radius in kilometers"
+      }
+    },
+    "required": ["location"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string"},
+      "count": {"type": "integer"},
+      "donation_centers": {
+        "type": "array",
+        "items": {"type": "object"}
+      }
+    }
+  },
+  "endpoint": {
+    "url": "http://localhost:8000/api/routes_actions/donate",
+    "method": "GET",
+    "params": ["location", "radius_km"]
+  }
+}

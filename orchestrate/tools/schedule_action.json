@@ -1,0 +1,31 @@
+{
+  "name": "schedule_action",
+  "description": "Schedule an action (donation, repair, upcycle) in the user’s calendar.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "item_id": {"type": "integer"},
+      "action": {
+        "type": "string",
+        "enum": ["donate", "repair", "upcycle"]
+      },
+      "date": {
+        "type": "string",
+        "description": "ISO format date (YYYY-MM-DD)"
+      }
+    },
+    "required": ["item_id", "action", "date"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string"},
+      "event": {"type": "object"}
+    }
+  },
+  "endpoint": {
+    "url": "http://localhost:8000/api/routes_actions/schedule",
+    "method": "POST",
+    "params": ["item_id", "action", "date"]
+  }
+}
