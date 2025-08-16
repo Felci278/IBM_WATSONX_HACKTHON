@@ -1,0 +1,17 @@
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+Flask-RESTful
+jsonschema
+uvicorn
+python-multipart
+google-api-python-client
+opencv-python
+requests
+tensorflow
+python-dotenv
+pytest
+google-auth-oauthlib
+pillow
+
+

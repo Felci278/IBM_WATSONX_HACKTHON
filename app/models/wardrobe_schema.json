@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Wardrobe Item Schema",
+  "description": "Schema for a wardrobe item in the sustainable clothing assistant application.",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "type": { "type": "string" },
+    "color": { "type": "string" },
+    "material": { "type": "string" },
+    "style": { "type": "string" },
+    "sustainability_level": { "type": "string" },
+    "image_path": { "type": "string" },
+    "status": { "type": "string", "enum": ["in_use", "donated", "upcycled", "repair"] }
+  },
+  "required": [
+    "id",
+    "type",
+    "color",
+    "material",
+    "style",
+    "sustainability_level",
+    "image_path"
+  ]
+}
