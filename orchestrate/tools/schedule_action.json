@@ -1,31 +1,31 @@
 {
-  "name": "schedule_action",
-  "description": "Schedule an action (donation, repair, upcycle) in the user’s calendar.",
+  "name": "calendar_scheduler",
+  "description": "Schedules an action (donation, repair, upcycle) in the user's calendar.",
+  "type": "REST",
+  "endpoint": "https://30fa1d29b74f.ngrok-free.app/api/routes_actions/schedule",
+  "method": "POST",
   "input": {
-    "type": "object",
-    "properties": {
-      "item_id": {"type": "integer"},
-      "action": {
-        "type": "string",
-        "enum": ["donate", "repair", "upcycle"]
-      },
-      "date": {
-        "type": "string",
-        "description": "ISO format date (YYYY-MM-DD)"
-      }
+    "item_id": {
+      "type": "integer",
+      "description": "The ID of the wardrobe item"
     },
-    "required": ["item_id", "action", "date"]
-  },
-  "output": {
-    "type": "object",
-    "properties": {
-      "status": {"type": "string"},
-      "event": {"type": "object"}
+    "action": {
+      "type": "string",
+      "enum": ["donate", "repair", "upcycle"],
+      "description": "The action to schedule"
+    },
+    "date": {
+      "type": "string",
+      "description": "Date in ISO format (YYYY-MM-DD)"
     }
   },
-  "endpoint": {
-    "url": "http://localhost:8000/api/routes_actions/schedule",
-    "method": "POST",
-    "params": ["item_id", "action", "date"]
+  "output": {
+    "status": "string",
+    "event": {
+      "id": "string",
+      "summary": "string",
+      "date": "string",
+      "status": "string"
+    }
   }
 }

@@ -4,7 +4,12 @@ import os, shutil
 
 router = APIRouter()
 UPLOAD_DIR = "data/images"
+
+# If a file accidentally exists, remove it and make a folder
+if os.path.isfile(UPLOAD_DIR):
+    os.remove(UPLOAD_DIR)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
 
 
 @router.get("/")
@@ -75,3 +80,17 @@ async def delete_item(item_id: int):
 
     storage.delete_item(item_id)
     return {"status": "deleted", "id": item_id}
+
+@router.post("/capture")
+async def capture_item():
+    """
+    Open webcam, capture a clothing item, run inference, and save metadata.
+    """
+    metadata = cv_inference.capture_from_webcam()
+    if not metadata:
+        return {"status": "cancelled"}
+
+    # Save to storage
+    storage.add_item(metadata)
+    return {"status": "added", "metadata": metadata}
+

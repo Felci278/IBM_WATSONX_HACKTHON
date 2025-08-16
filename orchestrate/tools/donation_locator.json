@@ -1,35 +1,29 @@
 {
   "name": "donation_locator",
-  "description": "Find donation centers near a user’s location.",
+  "description": "Finds donation centers near a given location to donate clothes.",
+  "type": "REST",
+  "endpoint": "https://30fa1d29b74f.ngrok-free.app/api/routes_actions/donate",
+  "method": "GET",
   "input": {
-    "type": "object",
-    "properties": {
-      "location": {
-        "type": "string",
-        "description": "User's location (address or city)"
-      },
-      "radius_km": {
-        "type": "integer",
-        "default": 5,
-        "description": "Search radius in kilometers"
-      }
+    "location": {
+      "type": "string",
+      "description": "City or address of the user"
     },
-    "required": ["location"]
-  },
-  "output": {
-    "type": "object",
-    "properties": {
-      "status": {"type": "string"},
-      "count": {"type": "integer"},
-      "donation_centers": {
-        "type": "array",
-        "items": {"type": "object"}
-      }
+    "radius_km": {
+      "type": "integer",
+      "description": "Search radius in kilometers (default 5)"
     }
   },
-  "endpoint": {
-    "url": "http://localhost:8000/api/routes_actions/donate",
-    "method": "GET",
-    "params": ["location", "radius_km"]
+  "output": {
+    "status": "string",
+    "count": "integer",
+    "donation_centers": [
+      {
+        "name": "string",
+        "address": "string",
+        "rating": "number",
+        "maps_url": "string"
+      }
+    ]
   }
 }

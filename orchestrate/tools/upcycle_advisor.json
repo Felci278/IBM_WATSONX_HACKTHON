@@ -1,29 +1,24 @@
 {
   "name": "upcycle_advisor",
-  "description": "Provide upcycling suggestions for clothing items.",
+  "description": "Provides upcycling ideas for clothing items.",
+  "type": "REST",
+  "endpoint": "https://30fa1d29b74f.ngrok-free.app/api/routes_actions/upcycle",
+  "method": "GET",
   "input": {
-    "type": "object",
-    "properties": {
-      "item_type": {
-        "type": "string",
-        "description": "Type of clothing item (e.g., shirt, jeans)"
-      }
+    "item_type": {
+      "type": "string",
+      "description": "Type of clothing item (e.g., shirt, jeans). Optional."
     }
   },
   "output": {
-    "type": "object",
-    "properties": {
-      "status": {"type": "string"},
-      "count": {"type": "integer"},
-      "suggestions": {
-        "type": "array",
-        "items": {"type": "string"}
+    "status": "string",
+    "count": "integer",
+    "suggestions": [
+      {
+        "idea": "string",
+        "difficulty": "string",
+        "estimated_time": "string"
       }
-    }
-  },
-  "endpoint": {
-    "url": "http://localhost:8000/api/routes_actions/upcycle",
-    "method": "GET",
-    "params": ["item_type"]
+    ]
   }
 }

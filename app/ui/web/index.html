@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sustainable Clothing Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌱 Sustainable Clothing Assistant</h1>
+  </header>
+
+  <main>
+    <section class="camera-container">
+      <video id="video" autoplay playsinline></video>
+      <div class="btn-group">
+        <button id="captureBtn" class="btn">📸 Capture</button>
+        <button id="viewBtn" class="btn secondary">👕 View Wardrobe</button>
+      </div>
+    </section>
+
+    <section id="wardrobe" class="hidden">
+      <h2>👗 My Wardrobe</h2>
+      <ul id="wardrobeList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with 💚 for sustainability</p>
+  </footer>
+
+  <script src="/static/camera.js"></script>
+</body>
+</html>
+ 

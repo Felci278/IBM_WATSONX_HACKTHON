@@ -28,7 +28,7 @@
     }
   },
   "endpoint": {
-    "url": "http://localhost:8000/api/routes_actions/repair",
+    "url": "https://30fa1d29b74f.ngrok-free.app/api/routes_actions/repair",
     "method": "GET",
     "params": ["location", "radius_km"]
   }
