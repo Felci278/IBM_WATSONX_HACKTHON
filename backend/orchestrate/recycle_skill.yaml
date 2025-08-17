@@ -1,0 +1,27 @@
+openapi: "3.0.0"
+info:
+  title: "Upcycle Advisor"
+  version: "1.0.0"
+  description: "Provides upcycling ideas for clothing items."
+servers:
+  - url: "https://api.example.com"
+paths:
+  /get-upcycle-ideas:
+    get:
+      operationId: "getUpcycleIdeas"
+      summary: "Suggest upcycling ideas"
+      parameters:
+        - name: "item_type"
+          in: "query"
+          required: false
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Upcycling suggestions"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  type: "string"

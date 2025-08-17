@@ -1,0 +1,39 @@
+openapi: "3.0.0"
+info:
+  title: "Donation Locator"
+  version: "1.0.0"
+  description: "Finds donation centers near the user."
+servers:
+  - url: "https://api.example.com"
+paths:
+  /find-donation-centers:
+    get:
+      operationId: "findDonationCenters"
+      summary: "Locate nearby donation centers"
+      parameters:
+        - name: "location"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "radius_km"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+      responses:
+        "200":
+          description: "List of donation centers"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    name:
+                      type: "string"
+                    address:
+                      type: "string"
+                    distance_km:
+                      type: "number"

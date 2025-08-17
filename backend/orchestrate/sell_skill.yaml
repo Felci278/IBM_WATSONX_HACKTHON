@@ -1,0 +1,39 @@
+openapi: "3.0.0"
+info:
+  title: "Selling Locations"
+  version: "1.0.0"
+  description: "Find thrifting stores near the user."
+servers:
+  - url: "https://api.example.com"
+paths:
+  /find-thrifting-stores:
+    get:
+      operationId: "findThriftStores"
+      summary: "Locate thrifting or resale stores"
+      parameters:
+        - name: "location"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "radius_km"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+      responses:
+        "200":
+          description: "List of thrift stores"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    store_name:
+                      type: "string"
+                    address:
+                      type: "string"
+                    distance_km:
+                      type: "number"

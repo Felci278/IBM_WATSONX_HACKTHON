@@ -1,0 +1,46 @@
+openapi: "3.0.0"
+info:
+  title: "Styling Advisor"
+  version: "1.0.0"
+  description: "Provides styling suggestions using wardrobe items."
+servers:
+  - url: "https://api.example.com"
+paths:
+  /get-styling-recommendation:
+    post:
+      operationId: "getStylingRecommendation"
+      summary: "Generate styling advice"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                itemid:
+                  type: "string"
+                image_directory:
+                  type: "string"
+                closet_py:
+                  type: "string"
+                event_details:
+                  type: "string"
+              required: ["itemid", "image_directory", "closet_py", "event_details"]
+      responses:
+        "200":
+          description: "Styling recommendation"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  outfit_description:
+                    type: "string"
+                  items_used:
+                    type: "array"
+                    items:
+                      type: "string"
+                  style_tips:
+                    type: "array"
+                    items:
+                      type: "string"

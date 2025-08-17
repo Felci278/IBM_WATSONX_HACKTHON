@@ -1,0 +1,10 @@
+opencv-python
+tensorflow
+fastapi
+uvicorn
+pillow
+googke-api-python-client
+google-auth
+google-auth-oauthlib
+httpx
+python-dotenv
