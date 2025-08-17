@@ -3,7 +3,7 @@ tensorflow
 fastapi
 uvicorn
 pillow
-googke-api-python-client
+googke-api
 google-auth
 google-auth-oauthlib
 httpx

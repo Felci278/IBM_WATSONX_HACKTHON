@@ -15,7 +15,7 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
   form.append("file", fileInput.files[0]);
 
   try {
-  const res = await postForm("http://127.0.0.1:8080/api/analyze", form);
+  const res = await postForm("http://127.0.0.1:8000/api/analyze", form);
 
     // Show analysis results with color name and swatch
     document.getElementById("analysis").classList.remove("hidden");
@@ -75,7 +75,7 @@ document.querySelectorAll(".actionBtn").forEach(btn => {
     }
 
     try {
-      const res = await postForm("http://127.0.0.1:8080/api/action", form);
+      const res = await postForm("http://127.0.0.1:8000/api/action", form);
 
       // Show output
       document.getElementById("output").classList.remove("hidden");
