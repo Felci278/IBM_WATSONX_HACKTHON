@@ -1,0 +1,22 @@
+{
+  "name": "RecycleClothingSkill",
+  "description": "Provide recycling/upcycling tips based on item type and material.",
+  "id": "recycle-skill-id",
+  "inputs": [
+    {
+      "key": "item_name",
+      "type": "text"
+    },
+    {
+      "key": "condition",
+      "type": "text"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "recycle_tips",
+      "type": "list"
+    }
+  ],
+  "logic": "Return practical recycling tips and quick upcycling ideas."
+}

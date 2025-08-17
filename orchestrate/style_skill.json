@@ -1,0 +1,27 @@
+{
+  "name": "StyleClothingSkill",
+  "description": "Given item_name and condition, suggest styling tips.",
+  "id": "style-skill-id",
+  "inputs": [
+    {
+      "key": "item_name",
+      "type": "text"
+    },
+    {
+      "key": "condition",
+      "type": "text"
+    },
+    {
+      "key": "location",
+      "type": "object",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "key": "style_tips",
+      "type": "list"
+    }
+  ],
+  "logic": "You are a fashion stylist. Provide 3 concise styling suggestions, including footwear and accessories."
+}

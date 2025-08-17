@@ -1,1 +1,0 @@
-prompts for training watsonx

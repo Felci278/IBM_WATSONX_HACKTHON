@@ -1,0 +1,18 @@
+{
+  "name": "DonateClothingSkill",
+  "description": "Find donation centers near user's location.",
+  "id": "donate-skill-id",
+  "inputs": [
+    {
+      "key": "location",
+      "type": "object"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "donation_centers",
+      "type": "list"
+    }
+  ],
+  "logic": "Return an ordered list of nearby donation centers with name, address and approximate distance."
+}

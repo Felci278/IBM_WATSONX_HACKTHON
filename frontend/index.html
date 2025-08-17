@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Fashion 4-Option Agent</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="card">
+    <h1>Fashion Agent — Hackathon Demo</h1>
+    <p>Upload an image of a clothing item. The agent will detect the item and condition, then you can choose Sell / Donate / Recycle / Style.</p>
+    <form id="uploadForm">
+      <input type="file" id="file" accept="image/*" required/>
+      <div class="row">
+        <input type="text" id="item_name" placeholder="Edit item name (optional)"/>
+        <input type="text" id="condition" placeholder="Edit condition (optional)"/>
+      </div>
+      <button id="analyzeBtn" type="submit">Analyze</button>
+    </form>
+
+    <div id="analysis" class="panel hidden"></div>
+
+    <div id="actions" class="panel hidden">
+      <button class="actionBtn" data-action="sell">Sell</button>
+      <button class="actionBtn" data-action="donate">Donate</button>
+      <button class="actionBtn" data-action="recycle">Recycle</button>
+      <button class="actionBtn" data-action="style">Style</button>
+    </div>
+
+    <pre id="output" class="panel hidden"></pre>
+  </div>
+
+<script src="/app.js"></script>
+</body>
+</html>

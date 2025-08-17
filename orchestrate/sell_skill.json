@@ -1,0 +1,35 @@
+{
+  "name": "SellClothingSkill",
+  "description": "Estimate price and suggest marketplaces for selling.",
+  "id": "sell-skill-id",
+  "inputs": [
+    {
+      "key": "item_name",
+      "type": "text"
+    },
+    {
+      "key": "condition",
+      "type": "text"
+    },
+    {
+      "key": "location",
+      "type": "object",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "key": "estimated_price",
+      "type": "object"
+    },
+    {
+      "key": "platforms",
+      "type": "list"
+    },
+    {
+      "key": "listing_text",
+      "type": "text"
+    }
+  ],
+  "logic": "Return estimated min/max price, top platforms, and a short listing description."
+}

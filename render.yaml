@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: fashion-4-option-agent
+    env: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python -m backend.main
+    autoDeploy: true
+    envVars:
+      - key: WATSONX_API_KEY
+        sync: false
+      - key: WATSONX_ORCH_URL
+        value: https://api.ibm.com/watsonx/orchestrate/v1/agents
+      - key: STYLE_SKILL_ID
+        value: style-skill-id
+      - key: RECYCLE_SKILL_ID
+        value: recycle-skill-id
+      - key: SELL_SKILL_ID
+        value: sell-skill-id
+      - key: DONATE_SKILL_ID
+        value: donate-skill-id
+      - key: WATSONX_MOCK
+        value: true
